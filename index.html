@@ -3,214 +3,339 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pilates — Sophia Kinetic</title>
+<title>Sophia Attebery | Dancer, Pilates Instructor & Dance Filmmaker</title>
+<meta name="description" content="Sophia Attebery is a dancer, Pilates instructor, and award-winning dance filmmaker in Nyack, NY. Private Pilates sessions, Gyrotonic coming 2027, dance film, and movement research.">
+<meta property="og:title" content="Sophia Attebery | Sophia Kinetic">
+<meta property="og:description" content="Dancer, Pilates instructor, and dance filmmaker based in Nyack, New York City, and Martha's Vineyard.">
+<meta property="og:url" content="https://sophiakinetic.com">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #EDE8DF;
-    --ink-dim: #8C887F;
-    --ground: #101010;
-    --ground-raised: #161615;
-    --brass: #B08D57;
-    --rule: #2A2A28;
+    --ink: #1F3A33;
+    --ink-soft: #3F4F4B;
+    --ink-dim: #55635F;
+    --ground: #F3F4F0;
+    --ground-raised: #E8ECE6;
+    --brass: #1F3A33;
+    --fog: #A9BFC7;
+    --fog-deep: #4E6E79;
+    --sand-light: #EFE7DA;
+    --sand-deep: #7D6A4E;
+    --fog-light: #E2EBEE;
+    --sand: #D9CBB4;
+    --rule: #D6DCD5;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
+    font-size: 17px;
     background: var(--ground);
     color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    line-height: 1.6;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  .page {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 5rem 1.75rem 6rem;
-  }
-  .eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--brass);
-    margin-bottom: 1.1rem;
-  }
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: clamp(2.1rem, 6vw, 3rem);
-    line-height: 1.1;
-    color: var(--ink);
-    margin-bottom: 0.4rem;
-  }
-  .location {
-    font-size: 0.9rem;
-    color: var(--ink-dim);
-    letter-spacing: 0.02em;
-    margin-bottom: 3rem;
-  }
-  .bio {
-    font-size: 1.02rem;
-    font-weight: 300;
-    color: #D8D3C8;
-    max-width: 56ch;
-    margin-bottom: 4rem;
-  }
-  .bio + .bio { margin-top: -3rem; }
-  section.schedule {
-    border-top: 1px solid var(--rule);
-    padding-top: 2.75rem;
-    margin-bottom: 3.5rem;
-  }
-  .section-title {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.3rem;
-    color: var(--ink);
-    margin-bottom: 2rem;
-  }
-  .class-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1.5rem;
-    padding: 1.25rem 0;
+  a { color: inherit; }
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(243,244,240,0.94);
+    backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--rule);
   }
-  .class-row:first-of-type { border-top: 1px solid var(--rule); }
-  .class-day {
-    font-family: 'Fraunces', serif;
-    font-size: 0.95rem;
-    color: var(--brass);
-    min-width: 4.5rem;
-    flex-shrink: 0;
+  .nav-inner {
+    max-width: 760px; margin: 0 auto;
+    padding: 0.9rem 1.75rem;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
   }
-  .class-info { flex: 1; }
-  .class-name {
-    font-size: 1rem;
-    color: var(--ink);
-    margin-bottom: 0.2rem;
+  .wordmark {
+    font-family: 'Newsreader', serif; 
+    font-size: 1.05rem; text-decoration: none; color: var(--ink);
   }
-  .class-meta {
-    font-size: 0.82rem;
-    color: var(--ink-dim);
+  .nav-links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+  .nav-links a {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-dim); text-decoration: none; transition: color 0.2s;
   }
-  .class-time {
-    font-size: 0.85rem;
-    color: var(--ink-dim);
-    text-align: right;
-    white-space: nowrap;
-    flex-shrink: 0;
+  .nav-links a:hover { color: var(--brass); }
+  .page { max-width: 760px; margin: 0 auto; padding: 0 1.75rem 6rem; }
+  header.hero { padding: 6rem 0 4.5rem; }
+  header.hero h1::after { content: ""; display: block; width: 72px; height: 3px; margin-top: 1.1rem; background: var(--sand); }
+  .eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--sand-deep); margin-bottom: 1.1rem;
   }
-  .book-link {
-    display: inline-block;
-    margin-top: 0.4rem;
-    font-size: 0.78rem;
-    color: var(--brass);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(176, 141, 87, 0.4);
-    transition: border-color 0.2s ease, color 0.2s ease;
+  h1 {
+    font-family: 'Newsreader', serif; font-weight: 400; 
+    font-size: clamp(2.4rem, 7vw, 3.6rem); line-height: 1.05; margin-bottom: 1rem;
   }
-  .book-link:hover {
-    color: var(--ink);
-    border-color: var(--ink);
+  .roles { font-family: 'Newsreader', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 2.25rem; }
+  .tagline { font-size: 1.1rem; color: var(--ink-soft); max-width: 46ch; margin-bottom: 2.25rem; }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 0.75rem 1.4rem;
+    font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; border: 1px solid var(--ink); color: var(--ink);
+    transition: background 0.2s, color 0.2s;
   }
-  section.privates {
-    padding-top: 0.5rem;
+  .btn.solid { background: var(--ink); color: #fff; }
+  .btn:not(.solid) { border-color: var(--sand); border-width: 2px; }
+  .btn:hover { background: #2E5248; color: #fff; border-color: #2E5248; }
+  section { border-top: 1px solid var(--sand); padding: 3.75rem 0 1rem; scroll-margin-top: 3.5rem; }
+  h2 {
+    font-family: 'Newsreader', serif;  font-weight: 400;
+    font-size: 1.9rem; margin-bottom: 1.5rem;
   }
-  .privates p {
-    color: #D8D3C8;
-    font-size: 0.98rem;
-    margin-bottom: 1.5rem;
+  section p { color: var(--ink-soft); max-width: 60ch; margin-bottom: 1.25rem; }
+  .focus-list {
+    list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.6rem 2rem; margin: 1.75rem 0 2.25rem;
   }
-  .studio-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
+  .focus-list li { font-size: 0.92rem; color: var(--ink-soft); padding-left: 1.1rem; position: relative; }
+  .focus-list li::before { content: "·"; position: absolute; left: 0; color: var(--sand-deep); font-weight: 600; }
+  .where { display: grid; gap: 0; margin-bottom: 2rem; }
+  .where-row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem;
+    padding: 1.25rem 0; border-bottom: 1px solid var(--rule);
   }
-  .studio-links a {
-    color: var(--ink);
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.05rem;
-    text-decoration: none;
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
+  .where-row:first-child { border-top: 1px solid var(--rule); }
+  .where-name { font-family: 'Newsreader', serif; font-size: 1.1rem; }
+  .where-meta { font-size: 0.85rem; color: var(--ink-dim); }
+  .text-link {
+    font-size: 0.8rem; color: var(--brass); text-decoration: none; white-space: nowrap;
+    border-bottom: 1px solid var(--sand); transition: color 0.2s, border-color 0.2s;
   }
-  .studio-links a::after {
-    content: "→";
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-size: 0.8rem;
-    color: var(--brass);
-    transition: transform 0.2s ease;
+  .text-link:hover { color: var(--ink); border-color: var(--ink); }
+  .note {
+    background: var(--fog-light); border-left: 3px solid var(--fog);
+    padding: 1.25rem 1.5rem; margin: 1.5rem 0 2rem;
   }
-  .studio-links a:hover::after { transform: translateX(4px); }
-  @media (max-width: 480px) {
-    .class-row { flex-wrap: wrap; }
-    .class-time { text-align: left; }
+  .note p { margin: 0; }
+  .credits { list-style: none; margin: 1.5rem 0 2rem; }
+  .credits li {
+    display: flex; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--rule);
+  }
+  .credits li:first-child { border-top: 1px solid var(--rule); }
+  .credit-year { font-family: 'Newsreader', serif; color: var(--fog-deep); min-width: 4.5rem; flex-shrink: 0; }
+  .credit-text { color: var(--ink-soft); font-size: 0.95rem; }
+  .credit-text strong { font-weight: 600; color: var(--ink); }
+  #film { background: var(--fog-light); margin: 0 -1.75rem; padding-left: 1.75rem; padding-right: 1.75rem; padding-bottom: 2.5rem; border-top: none; }
+  #film .credits li { border-color: var(--fog); }
+  #research { border-top: none; }
+  .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.25rem; margin: 0 0 2rem; }
+  .quote { margin: 0; padding: 1.5rem 1.4rem; background: #fff; border-top: 3px solid var(--sand); }
+  .quote blockquote { font-family: 'Newsreader', serif; font-size: 1.08rem; line-height: 1.5; color: var(--ink); margin-bottom: 1rem; }
+  .quote figcaption { font-size: 0.82rem; color: var(--ink-dim); }
+  .collab { border-top: 1px solid var(--sand); padding-top: 2rem; margin-top: 2.5rem; scroll-margin-top: 4rem; }
+  .collab h3 { font-family: 'Newsreader', serif; font-weight: 400; font-size: 1.35rem; margin-bottom: 0.6rem; }
+  .ways { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.25rem; margin: 1.25rem 0 1.5rem; }
+  .ways strong { display: block; font-family: 'Newsreader', serif; font-weight: 500; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.2rem; }
+  .ways span { color: var(--ink-soft); font-size: 0.9rem; }
+  .media-slot { aspect-ratio: 16 / 9; background: var(--fog-light); border: 1px dashed var(--fog); display: flex; align-items: center; justify-content: center; color: var(--ink-dim); font-size: 0.9rem; margin: 0.5rem 0 1.5rem; }
+  #research { border-top: none; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 190px; gap: 3rem; align-items: center; }
+  .vert { aspect-ratio: 9 / 16; width: 100%; background: var(--fog-light); overflow: hidden; }
+  .vert iframe, .wide iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .wide { aspect-ratio: 16 / 9; width: 100%; background: #0f1a17; }
+  .film-feature { margin: 2rem 0 1rem; max-width: 520px; }
+  .film-caption { font-size: 0.88rem; color: var(--ink-dim); margin: 0.6rem 0 0; }
+  .film-caption strong { color: var(--ink); font-weight: 600; }
+  .film-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 2rem 0 1.5rem; }
+  .film-row .film-caption { font-size: 0.8rem; }
+  .film-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1.5rem; margin: 2rem 0 2.5rem; }
+  .pilates-grid { display: grid; grid-template-columns: 1fr 150px; gap: 2.5rem; align-items: start; }
+  @media (max-width: 700px) {
+    .hero-grid, .pilates-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-grid .vert { max-width: 260px; }
+    .pilates-grid .vert { max-width: 220px; }
+    .film-grid { grid-template-columns: 1fr; }
+    .film-row { grid-template-columns: 1fr; }
+  }
+  form { display: grid; gap: 1.1rem; max-width: 520px; margin-top: 1.5rem; }
+  label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-dim); display: block; margin-bottom: 0.4rem; }
+  input, select, textarea {
+    width: 100%; background: #fff; color: var(--ink);
+    border: 1px solid #C5CDC6; padding: 0.8rem 0.9rem;
+    font-family: 'Source Sans 3', sans-serif; font-weight: 400; font-size: 0.95rem;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--fog); border-color: var(--ink); }
+  textarea { min-height: 130px; resize: vertical; }
+  button[type=submit] { cursor: pointer; justify-self: start; font-family: 'Source Sans 3', sans-serif; }
+  .hidden { display: none; }
+  .footer-band { background: var(--ink); }
+  footer {
+    max-width: 760px; margin: 0 auto; padding: 2.5rem 1.75rem 3rem;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    font-size: 0.85rem; color: var(--fog);
+  }
+  footer a { color: var(--sand); text-decoration: none; }
+  footer a:hover { color: #fff; }
+  .wordmark { white-space: nowrap; }
+  @media (max-width: 560px) {
+    .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+    .nav-links { gap: 1rem; }
+    .where-row { flex-direction: column; gap: 0.4rem; }
+    header.hero { padding: 4rem 0 3.5rem; }
   }
 </style>
 </head>
 <body>
-  <div class="page">
-    <div class="eyebrow">Martha's Vineyard</div>
-    <h1>Pilates</h1>
-    <div class="location">Weekly Sessions with Sophia Attebery</div>
-    <p class="bio">Sophia is a comprehensively certified Polestar Pilates instructor and professional dancer who offers personalized Pilates sessions rooted in movement science. Her work supports clients across a wide spectrum, including post-physical therapy rehabilitation, injury prevention, functional strength, pre- and post-natal care, and maintaining mobility and balance through all stages of life.</p>
-    <section class="schedule">
-      <div class="section-title">Weekly Classes</div>
-      <div class="class-row">
-        <div class="class-day">Tue</div>
-        <div class="class-info">
-          <div class="class-name">Reformer / Tower</div>
-          <div class="class-meta">BodySnack · 55 min</div>
-          <a class="book-link" href="https://www.bodysnack.net/book-class" target="_blank" rel="noopener">Book on MINDBODY</a>
-        </div>
-        <div class="class-time">9:30 AM</div>
+  <nav>
+    <div class="nav-inner">
+      <a class="wordmark" href="#top">Sophia Attebery</a>
+      <div class="nav-links">
+        <a href="#pilates">Pilates</a>
+        <a href="#film">Film</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+        <a href="about.html">About</a>
       </div>
+    </div>
+  </nav>
 
-      <div class="class-row">
-        <div class="class-day">Thu</div>
-        <div class="class-info">
-          <div class="class-name">Mixed Apparatus Pilates</div>
-          <div class="class-meta">Vineyard Pilates &amp; Bodywork · 55 min</div>
-          <a class="book-link" href="https://clients.mindbodyonline.com/classic/mainclass" target="_blank" rel="noopener">Book on MINDBODY</a>
-        </div>
-        <div class="class-time">8:00 AM</div>
+  <div class="page" id="top">
+    <header class="hero">
+      <div class="hero-grid">
+      <div>
+      <div class="eyebrow">Nyack · New York City · Martha's Vineyard</div>
+      <h1>Sophia Attebery</h1>
+      <p class="roles">Pilates Instructor · Dance Filmmaker · Movement Researcher</p>
+      <div class="cta-row">
+        <a class="btn solid" href="#contact">Book a Pilates session</a>
+        <a class="btn" href="#film">See the films</a>
       </div>
-
-      <div class="class-row">
-        <div class="class-day">Fri</div>
-        <div class="class-info">
-          <div class="class-name">Mixed Apparatus Pilates</div>
-          <div class="class-meta">Vineyard Pilates &amp; Bodywork · 55 min</div>
-          <a class="book-link" href="https://clients.mindbodyonline.com/classic/mainclass" target="_blank" rel="noopener">Book on MINDBODY</a>
-        </div>
-        <div class="class-time">8:00 AM</div>
       </div>
+      <div class="vert"><iframe src="https://www.youtube-nocookie.com/embed/c1ssUt7bYKk?rel=0&autoplay=1&mute=1&loop=1&playlist=c1ssUt7bYKk&controls=0&playsinline=1" title="Sophia dancing before rehearsal, summer 2026" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      </div>
+    </header>
 
-      <div class="class-row">
-        <div class="class-day">Sat</div>
-        <div class="class-info">
-          <div class="class-name">Intermediate Reformer / Tower</div>
-          <div class="class-meta">BodySnack · 55 min</div>
-          <a class="book-link" href="https://www.bodysnack.net/book-class" target="_blank" rel="noopener">Book on MINDBODY</a>
+    <section id="pilates">
+      <div class="eyebrow">Teaching</div>
+      <h2>Pilates</h2>
+      <div class="pilates-grid">
+        <div>
+      <p>I'm a comprehensively certified Polestar Pilates instructor with a BA in Dance from Oberlin College. My sessions are personalized, grounded in movement science, and informed by my background in dance.</p>
+      <p>I'll meet you where your body is and build from there, creating a positive movement experience that develops strength, mobility, body awareness, and confidence.</p>
         </div>
-        <div class="class-time">10:30 AM</div>
+        <div class="vert"><iframe src="https://www.youtube-nocookie.com/embed/fqJdrpULZw8?rel=0" title="Sophia moving before teaching Pilates" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      </div>
+      <ul class="focus-list">
+        <li>Rehab after physical therapy</li>
+        <li>Injury prevention</li>
+        <li>Functional strength</li>
+        <li>Pre- and post-natal care</li>
+        <li>Mobility &amp; balance at every age</li>
+        <li>Dancers &amp; performers</li>
+      </ul>
+      <div class="where">
+        <div class="where-row">
+          <div>
+            <div class="where-name">Moving Arts Integrative Pilates</div>
+            <div class="where-meta">Nyack, NY · privates &amp; duets</div>
+          </div>
+          <a class="text-link" href="#contact">Request a session →</a>
+        </div>
+        <div class="where-row">
+          <div>
+            <div class="where-name">BodySnack</div>
+            <div class="where-meta">Martha's Vineyard · summers · privates &amp; classes</div>
+          </div>
+          <a class="text-link" href="https://www.bodysnack.net/sessions" target="_blank" rel="noopener">Book at BodySnack →</a>
+        </div>
+        <div class="where-row">
+          <div>
+            <div class="where-name">Vineyard Pilates &amp; Healing Arts</div>
+            <div class="where-meta">Martha's Vineyard · summers · privates &amp; classes</div>
+          </div>
+          <a class="text-link" href="https://www.vineyardpilates.com" target="_blank" rel="noopener">Book at Vineyard Pilates →</a>
+        </div>
+        <div class="where-row">
+          <div>
+            <div class="where-name">Lewis JCC · Riley Family Pilates Studio</div>
+            <div class="where-meta">West Nyack, NY · privates &amp; reformer classes</div>
+          </div>
+          <a class="text-link" href="https://jccrockland.org/pilates_rate_card" target="_blank" rel="noopener">Book at Lewis JCC →</a>
+        </div>
+      </div>
+      <div class="testimonials">
+        <figure class="quote">
+          <blockquote>&ldquo;Sophia takes a versatile approach to guiding others in strengthening their scaffolding. She meets each of us where we are with encouragement, wisdom, creativity, patience, and clear direction. My sessions with her are a joy!&rdquo;</blockquote>
+          <figcaption>Judith Rose</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>&ldquo;I&rsquo;ve always been active, but despite exercising consistently, I never truly felt strong. After just a couple of months of Pilates with Sophia, who has a keen eye for alignment and gives kind instruction, my strength has grown fast. I can confidently say I feel strong now!&rdquo;</blockquote>
+          <figcaption>Beila</figcaption>
+        </figure>
+      </div>
+      <div class="note">
+        <p><strong style="font-weight:600;color:var(--ink)">Gyrotonic® Apprentice Teacher, coming 2027.</strong> I'm in Gyrotonic teacher apprentice training now. Join the list and you'll be among the first to book when sessions open.</p>
       </div>
     </section>
 
-    <section class="privates">
-      <p>Privates, duets, and trios are booked directly with each studio.</p>
-      <div class="studio-links">
-        <a href="https://www.bodysnack.net/sessions" target="_blank" rel="noopener">BodySnack</a>
-        <a href="https://www.vineyardpilates.com" target="_blank" rel="noopener">Vineyard Pilates</a>
+    <section id="film">
+      <div class="eyebrow">Dance &amp; Film</div>
+      <h2>Dance Film</h2>
+      <p>I make films where the camera dances. I design and weld camera stabilizers so that the lens can move with the body. I trained in Documentary Filmmaking at Prague Film School, and my work has been recognized on the international festival circuit.</p>
+      <div class="film-row">
+        <div><div class="wide"><iframe src="https://www.youtube-nocookie.com/embed/1Brkbp_Kgeg?rel=0" title="Malpaso Dance Company in Robyn Mineko Williams' Elemental" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="film-caption"><strong>Malpaso Dance Company, <em>Elemental</em></strong> · Video for The Joyce Theater, 2020</p></div>
+        <div><div class="wide"><iframe src="https://www.youtube-nocookie.com/embed/gNswLLQeteg?rel=0" title="Martha's Vineyard Dance Film Festival 2026 Trailer" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="film-caption"><strong>Martha's Vineyard Dance Film Festival</strong> · 2026 trailer</p></div>
+        <div><div class="wide"><iframe src="https://www.youtube-nocookie.com/embed/45dHlHgkWAM?rel=0" title="Not Today" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><p class="film-caption"><strong>Not Today</strong> · Award-winning 48-hour film, 2016</p></div>
       </div>
+      <p style="margin:-0.5rem 0 2rem; display:flex; gap:1.75rem; flex-wrap:wrap"><a class="text-link" href="https://www.youtube.com/watch?v=BCrD4YyXm7Y" target="_blank" rel="noopener">Watch my demo reel →</a><a class="text-link" href="https://www.youtube.com/@sophiaattebery" target="_blank" rel="noopener">More films on YouTube →</a></p>
+      <p style="font-style:italic;font-size:0.9rem;color:var(--ink-dim);margin:0 0 0.6rem">Selected credits</p>
+      <ul class="credits">
+        <li><span class="credit-year">2026</span><span class="credit-text"><strong><a href="https://www.youtube.com/watch?v=gNswLLQeteg" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--sand)">Martha's Vineyard Dance Film Festival</a></strong> · Programming &amp; production, with Circuit Arts and The Yard</span></li>
+        <li><span class="credit-year">2026</span><span class="credit-text"><strong>Dance Film Festival Workshop</strong> · Co-founder, Camera, Movement &amp; Sound Workshop, Martha's Vineyard</span></li>
+        <li><span class="credit-year">2025</span><span class="credit-text"><strong><a href="https://www.youtube.com/watch?v=C96BIDiPN9c" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--sand)">Garnerville Arts Festival</a></strong> · 20-minute video installation alongside original paintings and mixed media</span></li>
+        <li><span class="credit-year">2024-25</span><span class="credit-text"><strong>Films That Move</strong> · Field Producer, Operations Manager, Cape Charles, VA</span></li>
+        <li><span class="credit-year">2020</span><span class="credit-text"><strong><a href="https://www.youtube.com/watch?v=SDiLIuokOUA" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--sand)">Red Is Dancing × The Ailey School</a></strong> · Production Assistant, dance film tribute to Judy Chicago's <em>The Dinner Party</em>, Brooklyn Museum</span></li>
+        <li><span class="credit-year">2020</span><span class="credit-text"><strong><a href="https://www.youtube.com/watch?v=1Brkbp_Kgeg" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--sand)">The Joyce Theater</a></strong> · Video for Malpaso Dance Company in Robyn Mineko Williams' <em>Elemental</em></span></li>
+        <li><span class="credit-year">2016</span><span class="credit-text"><strong><a href="https://www.youtube.com/watch?v=45dHlHgkWAM" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--sand)">Boundless in Brooklyn 48-Hour Dance Film Competition</a></strong> · Winner</span></li>
+      </ul>
+    </section>
+
+    <section id="research">
+      <div class="eyebrow">Research</div>
+      <h2>Movement Research &amp; Collaboration</h2>
+      <p>My work sits where bodies, cameras, and tools meet. I build equipment, and I study how people move and how technology can support that. I'm always open to talking with researchers, inventors, artists, and institutions working on similar questions.</p>
+      <div class="film-feature">
+        <div class="wide"><iframe src="https://www.youtube-nocookie.com/embed/TrdNuLnmQZw?rel=0" title="Welded a Slider to Dance with Camera" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+        <p class="film-caption"><strong>Welded a Slider to Dance with Camera</strong> · Built in 2020, during lockdown. A camera slider I can control with my movement</p>
+      </div>
+      <a class="text-link" href="#contact">Start a conversation →</a>
+    </section>
+
+    <section id="contact">
+      <div class="eyebrow">Contact</div>
+      <h2>Get in touch</h2>
+      <p>Book a Pilates session, join the Gyrotonic list, or ask about a film or a collaboration. I'll get back to you within a couple of days.</p>
+      <p>Based in Nyack, New York City, and Martha's Vineyard. Available to travel for film projects, workshops, and residencies.</p>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?sent=1#contact">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden"><label>Leave blank <input name="bot-field"></label></p>
+        <div><label for="name">Name</label><input id="name" name="name" required></div>
+        <div><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+        <div>
+          <label for="topic">I'm interested in</label>
+          <select id="topic" name="topic">
+            <option>Private Pilates session</option>
+            <option>Gyrotonic waitlist</option>
+            <option>Dance film / commission</option>
+            <option>Collaboration</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
+        <button class="btn solid" type="submit">Send</button>
+      </form>
     </section>
   </div>
+
+  <div class="footer-band"><footer>
+    <span>© 2026 Sophia Attebery · Sophia Kinetic</span>
+    <span><a href="https://www.instagram.com/sophikinetic/" target="_blank" rel="noopener">Instagram</a></span>
+  </footer></div>
 </body>
 </html>

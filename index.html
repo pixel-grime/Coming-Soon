@@ -184,6 +184,8 @@
     header.hero { padding: 4rem 0 3.5rem; }
   }
   h2.boxed { display: inline-block; border: 1.5px solid var(--ink); padding: 0.25em 0.7em 0.3em; }
+  .sent-note { background: #fff; border-left: 3px solid var(--sand); padding: 1rem 1.25rem; margin: 1.5rem 0 0.5rem; max-width: 520px; color: var(--ink); }
+  .sent-note strong { font-weight: 600; }
   .lead { font-family: 'Newsreader', serif; font-size: clamp(1.25rem, 2.6vw, 1.5rem); line-height: 1.45; color: var(--ink) !important; max-width: 36ch !important; }
   .subhead { font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--ink); margin: 2.75rem 0 1rem; }
   .focus-list { display: flex !important; flex-wrap: wrap; gap: 0.6rem !important; margin: 0 0 1rem !important; }
@@ -340,6 +342,7 @@
       <h2>Get in touch</h2>
       <p>Book a Pilates session, join the Gyrotonic list, or ask about a film or a collaboration. I'll get back to you within a couple of days.</p>
       <p>Based in Nyack, New York City, and Martha's Vineyard. Available to travel for film projects, workshops, and residencies.</p>
+      <div class="sent-note" id="sent-note" hidden><strong>Thank you, your message was sent.</strong> I&rsquo;ll get back to you within a couple of days.</div>
       <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?sent=1#contact">
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden"><label>Leave blank <input name="bot-field"></label></p>
@@ -367,6 +370,7 @@
   </footer></div>
   <div id="lb" hidden><button class="lb-close" aria-label="Close video">&times;</button><div class="lb-frame"></div></div>
   <script>
+  { if (/[?&]sent=1/.test(location.search)) { const n=document.getElementById('sent-note'); if (n) { n.hidden=false; } } }
   { const v=document.querySelector('.hero-video');
     if (v) {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); }

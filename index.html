@@ -135,7 +135,9 @@
   .ways span { color: var(--ink-soft); font-size: 0.9rem; }
   .media-slot { aspect-ratio: 16 / 9; background: var(--fog-light); border: 1px dashed var(--fog); display: flex; align-items: center; justify-content: center; color: var(--ink-dim); font-size: 0.9rem; margin: 0.5rem 0 1.5rem; }
   #research { border-top: none; }
-  .hero-grid { display: grid; grid-template-columns: 1fr 190px; gap: 3rem; align-items: center; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 260px; gap: 2.5rem; align-items: center; }
+  @media (min-width: 701px) { .hero-grid h1 { font-size: 3.1rem; white-space: nowrap; } }
+  .hero-video { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: var(--fog-light); }
   .vert { aspect-ratio: 9 / 16; width: 100%; background: var(--fog-light); overflow: hidden; }
   .vert iframe, .wide iframe { width: 100%; height: 100%; border: 0; display: block; }
   .wide { aspect-ratio: 16 / 9; width: 100%; background: #0f1a17; }
@@ -149,6 +151,7 @@
   @media (max-width: 700px) {
     .hero-grid, .pilates-grid { grid-template-columns: 1fr; gap: 2rem; }
     .hero-grid .vert { max-width: 260px; }
+    .hero-video { max-width: 420px; }
     .pilates-grid .vert { max-width: 220px; }
     .film-grid { grid-template-columns: 1fr; }
     .film-row { grid-template-columns: 1fr; }
@@ -175,7 +178,8 @@
   .wordmark { white-space: nowrap; }
   @media (max-width: 560px) {
     .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
-    .nav-links { gap: 1rem; }
+    .nav-links { gap: 0.9rem; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.12em; }
     .where-row { flex-direction: column; gap: 0.4rem; }
     header.hero { padding: 4rem 0 3.5rem; }
   }
@@ -219,7 +223,7 @@
 
   <div class="page" id="top">
     <header class="hero">
-      <div>
+      <div class="hero-grid">
       <div>
       <div class="eyebrow">Nyack · New York City · Martha's Vineyard</div>
       <h1>Sophia Attebery</h1>
@@ -229,12 +233,13 @@
         <a class="btn" href="#film">See the films</a>
       </div>
       </div>
+      <video class="hero-video" src="hero-loop.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Sophia dancing in an open barn doorway"></video>
       </div>
     </header>
 
     <section id="pilates">
       <div class="eyebrow">Teaching</div>
-      <h2 class="boxed">Pilates</h2>
+      <h2>Pilates</h2>
       <div class="pilates-grid">
         <div>
       <p class="lead">I'm a comprehensively certified Polestar Pilates instructor with a BA in Dance from Oberlin College. My sessions are personalized, grounded in movement science, and informed by my background in dance.</p>
@@ -363,6 +368,8 @@
   </footer></div>
   <div id="lb" hidden><button class="lb-close" aria-label="Close video">&times;</button><div class="lb-frame"></div></div>
   <script>
+  { const v=document.querySelector('.hero-video');
+    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); } }
   { const lb=document.getElementById('lb'), fr=lb.querySelector('.lb-frame');
     const close=()=>{lb.hidden=true; fr.innerHTML='';};
     document.querySelectorAll('.vthumb').forEach(b=>b.addEventListener('click',()=>{

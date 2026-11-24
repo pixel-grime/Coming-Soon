@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Sophia Attebery</title>
+<meta name="description" content="Sophia Attebery is a dancer, Pilates instructor, and award-winning dance filmmaker in Nyack, NY. Private Pilates sessions, Gyrotonic coming 2027, dance film, and movement research.">
+<meta property="og:title" content="Sophia Attebery | Sophia Kinetic">
+<meta property="og:description" content="Dancer, Pilates instructor, and dance filmmaker based in Nyack, New York City, and Martha's Vineyard.">
+<meta property="og:url" content="https://sophiakinetic.com">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="wordmark" href="/">Sophia Attebery</a>
+      <div class="nav-links">
+        <a href="pilates.html">Pilates</a>
+        <a href="film.html">Film</a>
+        <a href="research.html">Research</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page">
+    <header class="page-head">
+      <div class="eyebrow">Contact</div>
+      <h1>Get in touch</h1>
+    </header>
+    <main>
+    <section id="contact">
+      <p><a href="https://calendar.app.google/jEEsgBt4vqy11WYi9" target="_blank" rel="noopener">Book a Pilates session</a>, join the Gyrotonic list, or ask about a film or a collaboration. I'll get back to you within a couple of days.</p>
+      <p>Based in Nyack, New York City, and Martha's Vineyard. Available to travel for film projects, workshops, and residencies.</p>
+      <div class="sent-note" id="sent-note" hidden><strong>Thank you, your message was sent.</strong> I&rsquo;ll get back to you within a couple of days.</div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact.html?sent=1">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden"><label>Leave blank <input name="bot-field"></label></p>
+        <div><label for="name">Name</label><input id="name" name="name" required></div>
+        <div><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+        <div>
+          <label for="topic">I'm interested in</label>
+          <select id="topic" name="topic">
+            <option>Private Pilates session</option>
+            <option>Gyrotonic waitlist</option>
+            <option>Dance film / commission</option>
+            <option>Collaboration</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
+        <button class="btn solid" type="submit">Send</button>
+      </form>
+    </section>
+    </main>
+  </div>
+
+  <div class="footer-band"><footer>
+    <span>© 2026 Sophia Attebery · Sophia Kinetic</span>
+    <span><a href="https://www.instagram.com/sophikinetic/" target="_blank" rel="noopener">Instagram</a></span>
+  </footer></div>
+  <div id="lb" hidden><button class="lb-close" aria-label="Close video">&times;</button><div class="lb-frame"></div></div>
+  <script src="site.js"></script>
+</body>
+</html>

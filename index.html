@@ -12,13 +12,79 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  main > section#pilates { border-top: 1px solid var(--sand) !important; padding-top: 3.75rem !important; }
+  .also { border-top: 1px solid var(--sand); margin-top: 3rem; padding-top: 2.5rem; }
+  .also-links { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+  .also-links a { display: flex; flex-direction: column; gap: 0.2rem; padding: 1rem 1.1rem; background: #fff; text-decoration: none; color: var(--ink); border-left: 3px solid var(--sand); }
+  .also-title { font-weight: 600; font-size: 1.05rem; }
+  .also-sub { font-size: 0.9rem; color: var(--ink-dim); }
+  @media (max-width: 700px) { .also-links { grid-template-columns: 1fr; } }
+
+  .pilates-head { }
+  .studio-feature { background: var(--ink); color: #fff; padding: 2.25rem 2rem 2rem; margin: 2.25rem 0 1rem; border-top: 4px solid var(--sand); }
+  .studio-eyebrow { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--sand); margin-bottom: 0.6rem; }
+  .studio-name { font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(1.9rem, 4.5vw, 2.4rem); line-height: 1.1; margin-bottom: 0.6rem; }
+  .studio-feature .studio-desc { color: #E3EAE6; font-size: 1.1rem; margin-bottom: 1.25rem; max-width: none; }
+  .studio-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; margin-bottom: 1.4rem; }
+  .studio-facts li { font-size: 0.98rem; color: #fff; padding-left: 1.1rem; position: relative; }
+  .studio-facts li::before { content: "\2713"; position: absolute; left: 0; color: var(--sand); font-size: 0.85rem; top: 0.1rem; }
+  .studio-offer { background: var(--sand-light); color: var(--ink); padding: 0.85rem 1.1rem; font-size: 1.02rem; margin-top: 1.4rem; display: inline-block; }
+  .studio-offer strong { font-weight: 700; }
+  .studio-actions { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+  .btn.studio-btn { background: var(--sand); color: var(--ink); border-color: var(--sand); font-weight: 600; padding: 0.9rem 1.6rem; }
+  .btn.studio-btn:hover { background: #fff; border-color: #fff; color: var(--ink); }
+  .studio-link { color: #fff; text-decoration: none; border-bottom: 1px solid var(--sand); font-size: 0.95rem; }
+  .also-studios { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 0.75rem; margin-bottom: 0.5rem; }
+  .also-studios a { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.85rem 1rem; background: #fff; text-decoration: none; color: var(--ink); border: 1px solid var(--rule); }
+  .also-studios .season { font-style: italic; font-weight: 600; font-size: 0.85rem; color: #7A6A4F; margin-bottom: 0.1rem; }
+  .also-studios strong { font-weight: 600; font-size: 0.98rem; }
+  .also-studios span { font-size: 0.85rem; color: var(--ink-dim); }
+  .small-note { font-size: 0.85rem !important; color: var(--ink-dim) !important; margin-bottom: 1.5rem !important; }
+  @media (max-width: 700px) { .also-studios { grid-template-columns: 1fr; } .studio-feature { padding: 1.75rem 1.25rem; margin-left: -0.5rem; margin-right: -0.5rem; } }
+
+  .studio-feature { position: relative; }
+  .studio-grid { display: block; }
+  .studio-feature .studio-desc strong { font-weight: 700; color: #fff; }
+  .studio-appt { color: var(--sand); font-weight: 600; font-size: 1rem; letter-spacing: 0.02em; margin: -0.6rem 0 1.1rem; }
+  .studio-map { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--ink); margin: 0.5rem 0 2.5rem; }
+  .studio-map svg { display: block; width: 170px; height: auto; border: 1px solid var(--rule); transition: border-color .2s; }
+  .studio-map:hover svg { border-color: var(--ink); }
+  .studio-map .map-addr { display: block; font-size: 0.8rem; line-height: 1.35; margin-top: 0.45rem; color: #E3EAE6; }
+  .studio-map .map-go { font-size: 0.98rem; border-bottom: 1px solid var(--ink); }
+  .rates-foot { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-top: 0.9rem; }
+  .rates-foot .rates-note { margin: 0 0 0.9rem !important; }
+  .rates-foot .ask-link { display: inline-block; }
+    .studio-photo { aspect-ratio: 4 / 5; border: 1px dashed rgba(217,203,180,0.6); display: flex; align-items: center; justify-content: center; color: var(--sand); font-size: 0.9rem; text-align: center; padding: 1rem; }
+  .studio-rates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid rgba(217,203,180,0.35); }
+  .rates-title { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--sand); margin-bottom: 0.5rem; }
+  .rates-title em { text-transform: none; letter-spacing: 0; font-style: normal; font-weight: 400; }
+  .rate { display: flex; justify-content: space-between; gap: 1rem; padding: 0.3rem 0; border-bottom: 1px dotted rgba(255,255,255,0.18); font-size: 0.98rem; color: #fff; }
+  .rate span:last-child { font-variant-numeric: tabular-nums; }
+  .studio-feature .rates-note { font-size: 0.85rem; color: #C9D5D0; margin: 0.9rem 0 0; }
+  @media (max-width: 760px) { .studio-grid { grid-template-columns: 1fr; } .studio-photo { aspect-ratio: 4 / 3; } .studio-rates { grid-template-columns: 1fr; } }
+
+  .studio-photo-img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+  .spec-grid { display: block; }
+  .spec-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; margin-top: 2.75rem; }
+  .gyro-grid { margin: 2rem 0; }
+  .gyro-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+  @media (max-width: 760px) { .spec-grid, .gyro-grid { grid-template-columns: 1fr; } .spec-photo { margin-top: 0; } }
+  .intro-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 2.5rem; align-items: center; margin-top: 0.5rem; }
+  .intro-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+  @media (max-width: 760px) { .intro-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+  .provider-note { margin: 1.25rem 0 0; padding: 0.9rem 1.1rem; border-left: 3px solid var(--sand); background: #fff; font-size: 0.98rem; color: var(--ink); max-width: 62ch; }
+  .provider-note strong { font-weight: 600; }
+  .provider-note a { color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none; white-space: nowrap; }
+  .rate .each { font-style: normal; color: #C9D5D0; font-size: 0.85rem; }
+</style>
 </head>
 <body>
   <nav>
     <div class="nav-inner">
       <a class="wordmark" href="/">Sophia Attebery</a>
       <div class="nav-links">
-        <a href="pilates.html">Pilates</a>
+        <a href="/" aria-current="page">Pilates</a>
         <a href="film.html">Film</a>
         <a href="research.html">Research</a>
         <a href="about.html">About</a>
@@ -31,31 +97,115 @@
     <header class="hero">
       <div class="hero-grid">
       <div>
-      <div class="eyebrow">Nyack · New York City · Martha's Vineyard</div>
+      <div class="eyebrow">Nyack · NYC · Martha's Vineyard (summers)</div>
       <h1>Sophia Attebery</h1>
       <p class="roles">Pilates Instructor · Dance Filmmaker · Movement Researcher</p>
       <div class="cta-row">
         <a class="btn solid" href="https://calendar.app.google/jEEsgBt4vqy11WYi9" target="_blank" rel="noopener">Book a Pilates session</a>
-        <a class="btn" href="film.html">See the films</a>
+        <a class="btn" href="#pilates">Learn more</a>
       </div>
       </div>
       <video class="hero-video" src="hero-loop-tall.mp4" poster="hero-poster-tall.jpg" autoplay muted loop playsinline preload="auto" aria-label="Sophia dancing in an open barn doorway"></video>
       </div>
     </header>
     <main>
-    <div class="paths">
-      <a class="path" href="pilates.html"><div class="path-img" style="background-image:url('hero-poster-tall.jpg');background-position:center 70%"></div><div class="path-body"><div class="eyebrow" style="margin:0">Teaching</div><h2>Pilates</h2><p>Personalized private and duet sessions in Nyack and on Martha&rsquo;s Vineyard.</p><span class="go">Book a session →</span></div></a>
-      <a class="path" href="film.html"><div class="path-img" style="background-image:url('https://i.ytimg.com/vi/45dHlHgkWAM/hqdefault.jpg')"></div><div class="path-body"><div class="eyebrow" style="margin:0">Dance &amp; Film</div><h2>Dance Film</h2><p>Films where the camera dances, screened from Brooklyn to Tasmania.</p><span class="go">Watch the films →</span></div></a>
-      <a class="path" href="research.html"><div class="path-img" style="background-image:url('https://i.ytimg.com/vi/TrdNuLnmQZw/hqdefault.jpg')"></div><div class="path-body"><div class="eyebrow" style="margin:0">Research</div><h2>Movement Research</h2><p>Handmade camera rigs and the study of how bodies move.</p><span class="go">See the work →</span></div></a>
-    </div>
-    <figure class="home-quote">
-      <blockquote>&ldquo;She meets each of us where we are with encouragement, wisdom, creativity, patience, and clear direction. My sessions with her are a joy!&rdquo;</blockquote>
-      <figcaption>Judith Rose, Pilates client</figcaption>
-    </figure>
+    <section id="pilates">
+      <div class="pilates-head">
+        <div class="eyebrow">Teaching</div>
+        <h2>Pilates</h2>
+      </div>
+<div class="intro-grid">
+        <div>
+          <p class="lead">I'm a comprehensively certified Polestar Pilates instructor with a BA in Dance from Oberlin College. My sessions are personalized, grounded in movement science, and informed by my background in dance.</p>
+          <p class="lead">I'll meet you where your body is and build from there, creating a positive movement experience that develops strength, mobility, body awareness, and confidence.</p>
+        </div>
+        <img class="intro-photo" src="studio-sunlit.jpg" alt="Sunlit MovingArts studio with a Pilates Cadillac, stone fireplace and garden windows">
+      </div>
+
+      <div class="studio-feature">
+        <div class="studio-grid">
+        <div class="studio-main">
+        <div class="studio-eyebrow">Nyack, NY</div>
+        <h3 class="studio-name">MovingArts Integrative Pilates</h3>
+        <p class="studio-desc">Customized private Pilates sessions. <strong>By appointment only.</strong></p>
+        <ul class="studio-facts">
+          <li>55-minute sessions</li>
+          <li>Privates &amp; duets</li>
+          <li>Private parking</li>
+          <li>Wheelchair accessible</li>
+        </ul>
+        <div class="studio-actions">
+          <a class="btn studio-btn" href="https://calendar.app.google/jEEsgBt4vqy11WYi9" target="_blank" rel="noopener">Book at MovingArts</a>
+        </div>
+        <div class="studio-offer"><strong>New Client Special:</strong> 3 Private Sessions for $195</div>
+        <div class="studio-rates">
+          <div class="rates-col">
+            <div class="rates-title">Private sessions</div>
+            <div class="rate"><span>Single</span><span>$100</span></div>
+            <div class="rate"><span>5 sessions</span><span>$475</span></div>
+            <div class="rate"><span>10 sessions</span><span>$900</span></div>
+          </div>
+          <div class="rates-col">
+            <div class="rates-title">Duets <em>(per person)</em></div>
+            <div class="rate"><span>Single</span><span>$70</span></div>
+            <div class="rate"><span>5 sessions</span><span>$325</span></div>
+            <div class="rate"><span>10 sessions</span><span>$600</span></div>
+          </div>
+        </div>
+        <div class="rates-foot"><div><p class="rates-note"><em>24-hour cancellation policy</em></p><a class="studio-link ask-link" href="contact.html">Ask a question →</a></div><a class="studio-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=266+Piermont+Ave,+Nyack,+NY+10960" target="_blank" rel="noopener" aria-label="Get directions to MovingArts, 266 Piermont Ave, Nyack (opens Google Maps)">Get directions →</a></div>
+        </div>
+        </div>
+      </div>
+
+      <div class="spec-grid">
+        <div>
+      <h3 class="subhead">Specialties</h3>
+        <ul class="focus-list">
+          <li>Injury prevention</li>
+          <li>Pre- and post-natal care</li>
+          <li>Functional strength</li>
+          <li>Mobility &amp; balance at every age</li>
+          <li>Low-impact, high-reward movement</li>
+          <li>Collaboration with your PT &amp; care team</li>
+        </ul>
+        </div>
+      </div>
+      <h3 class="subhead">What clients say</h3>
+      <div class="testimonials">
+        <figure class="quote">
+          <blockquote>&ldquo;Sophia takes a versatile approach to guiding others in strengthening their scaffolding. She meets each of us where we are with encouragement, wisdom, creativity, patience, and clear direction. My sessions with her are a joy!&rdquo;</blockquote>
+          <figcaption>Judith Rose</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>&ldquo;I&rsquo;ve always been active, but despite exercising consistently, I never truly felt strong. After just a couple of months of Pilates with Sophia, who has a keen eye for alignment and gives kind instruction, my strength has grown fast. I can confidently say I feel strong now!&rdquo;</blockquote>
+          <figcaption>Beila</figcaption>
+        </figure>
+      </div>
+      <h3 class="subhead">Also teaching at</h3>
+      <div class="also-studios">
+        <a href="https://jccrockland.org/pilates_rate_card" target="_blank" rel="noopener"><em class="season">Current</em><strong>Lewis JCC</strong><span>West Nyack · privates &amp; reformer classes</span></a>
+        <a href="https://www.bodysnack.net/sessions" target="_blank" rel="noopener"><em class="season">Summers</em><strong>BodySnack</strong><span>Martha&rsquo;s Vineyard</span></a>
+        <a href="https://www.vineyardpilates.com" target="_blank" rel="noopener"><em class="season">Summers</em><strong>Vineyard Pilates &amp; Healing Arts</strong><span>Martha&rsquo;s Vineyard</span></a>
+      </div>
+      <p class="small-note">Each studio books and prices its own sessions.</p>
+      <div class="gyro-grid">
+      <div class="note" style="margin:0">
+        <p><strong style="font-weight:600;color:var(--ink)">Gyrotonic® Apprentice Teacher, coming 2027.</strong> I'm in Gyrotonic teacher apprentice training now. Join the list and you'll be among the first to book when sessions open.</p>
+      </div>
+      </div>
+    </section>
     <div class="next-cta">
-      <p>Have a question or an idea?</p>
-      <a class="btn solid" href="contact.html">Get in touch</a>
-      <a class="btn" href="about.html">About Sophia</a>
+      <p>Ready to start?</p>
+      <a class="btn solid" href="https://calendar.app.google/jEEsgBt4vqy11WYi9" target="_blank" rel="noopener">Book a Pilates session</a>
+      <a class="btn" href="contact.html">Ask a question</a>
+    </div>
+    <div class="also">
+      <div class="eyebrow">Also</div>
+      <div class="also-links">
+        <a href="film.html"><span class="also-title">Dance Film</span><span class="also-sub">Films where the camera dances</span></a>
+        <a href="research.html"><span class="also-title">Movement Research</span><span class="also-sub">Handmade rigs &amp; how bodies move</span></a>
+        <a href="about.html"><span class="also-title">About Sophia</span><span class="also-sub">Bio, training &amp; screenings</span></a>
+      </div>
     </div>
     </main>
   </div>
